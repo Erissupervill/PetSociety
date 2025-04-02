@@ -91,7 +91,11 @@ const galleryItems = [
 
     }
 ];
-let index = 0;
+
+
+if (typeof galleryItems !== "undefined" && galleryItems.length > 0) {
+    // Populate gallery and initialize slider
+    let index = 0;
 // Dynamically populate the gallery
 const gallerySlide = document.querySelector('.gallery-slide');
 galleryItems.forEach(item => {
@@ -129,6 +133,9 @@ function moveSlide(direction) {
 setInterval(() => {
     moveSlide(1);
 }, 5000);
+} else {
+    console.warn("galleryItems is not defined or empty.");
+}
 
 
 
